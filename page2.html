@@ -86,6 +86,22 @@
             position: fixed;
             width: 100%;
             bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* تنسيق زر الإغلاق في الفوتر */
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            top: 5px;
+            right: 10px;
         }
 
         @media (max-width: 768px) {
@@ -124,13 +140,19 @@
     <p style="text-align: center; margin-top: 20px;">لتحميل ماين كرافت إصدار 1.21.31 اضغط <a href="https://www.mediafire.com/file/u930u1ub0zyrfcy/" target="_blank">هنا</a>.</p>
 
     <footer>
-        حقوق الطبع والنشر © 2024 | جميع الحقوق محفوظة
+        <span>حقوق الطبع والنشر © 2024 | جميع الحقوق محفوظة</span>
+        <button class="close-btn" onclick="closeFooter()">×</button>
     </footer>
 
     <script>
         // دالة لإغلاق التنبيه
         function closeAlert() {
             document.getElementById("newsAlert").style.display = "none";
+        }
+
+        // دالة لإغلاق أو إزالة العنصر في الفوتر
+        function closeFooter() {
+            document.querySelector('footer').style.display = "none";
         }
     </script>
 
