@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="موقع يخص أخبار لعبة MINECRAFT">
     <title>آخر الأخبار عن ماين كرافت</title>
     <style>
         body {
@@ -13,6 +14,31 @@
             padding: 0;
         }
 
+        /* تنسيق مربع التنبيه */
+        .news-alert {
+            background-color: #ffcc00;
+            color: #333;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 2px solid #ff9900;
+        }
+
+        /* تنسيق زر الإغلاق */
+        .news-alert .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            float: right;
+        }
+
         header {
             background-color: #4CAF50;
             padding: 20px;
@@ -20,6 +46,7 @@
             font-size: 2.5em;
             color: white;
             font-weight: bold;
+            margin-top: 50px; /* حتى لا يغطي التنبيه الهيدر */
         }
 
         .minecraft-theme {
@@ -43,7 +70,6 @@
             color: #ccc;
         }
 
-        /* نمط لخط سفلي في المنتصف */
         .underline-center {
             text-align: center;
             border-bottom: 2px solid #ffcc00;
@@ -62,16 +88,28 @@
             bottom: 0;
         }
 
+        @media (max-width: 768px) {
+            .minecraft-theme {
+                width: 90%;
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- مربع التنبيه -->
+    <div id="newsAlert" class="news-alert">
+        <button class="close-btn" onclick="closeAlert()">×</button>
+        خبر مهم: اخبار جديده عن ماين كرافت!!!
+    </div>
 
     <header>
         آخر الأخبار عن ماين كرافت
     </header>
 
     <div class="minecraft-theme">
-        <h2>أحدث التحديثات في ماين كرافت!</h2>
+        <h2>آخر الأخبار في ماين كرافت!</h2>
         <p>أحدث الأخبار حول "ماين كرافت" تتضمن تحديثات مثيرة قادمة في نهاية 2024. أعلنت "موجانغ" عن إضافة بيئة جديدة تدعى "حديقة بايل" (Pale Garden)، وهي غابة خافتة الإضاءة ستكون مليئة بالأجواء المرعبة. هذه البيئة ستحتوي على مخلوق جديد يُسمى "الصراخ" (The Creaking)، وهو شبح خشبي يظهر ليلاً. المخلوق هذا لا يمكن قتله بشكل تقليدي، بل يتطلب منك تدمير "قلب الصراخ" المختبئ في الغابة لإيقافه. من المتوقع أن يتم إطلاق هذه الإضافة في الأشهر المقبلة.</p>
 
         <p class="underline-center">في "Minecraft Live 2024"، تم الكشف عن المزيد من التفاصيل حول تحديثات العام القادم وتأكيدات على الفيلم القادم للعبة الذي سيعرض في أبريل 2025.</p>
@@ -79,9 +117,22 @@
         <p>يمكنك متابعة آخر الأخبار والتحديثات التي تتعلق بماين كرافت عن طريق موقعنا.</p>
     </div>
 
+    <!-- الفقرة التي تم إضافتها في أسفل الصفحة -->
+    <p style="text-align: center; margin-top: 20px;">لتحميل ماين كرافت إصدار 1.21.41 اضغط <a href="https://mcpedl.org/uploads_files/23-10-2024/minecraft-1-21-41.apk" target="_blank">هنا</a>.</p>
+    
+    <!-- إضافة الكود الجديد في أسفل الصفحة -->
+    <p style="text-align: center; margin-top: 20px;">لتحميل ماين كرافت إصدار 1.21.31 اضغط <a href="https://www.mediafire.com/file/u930u1ub0zyrfcy/" target="_blank">هنا</a>.</p>
+
     <footer>
         حقوق الطبع والنشر © 2024 | جميع الحقوق محفوظة
     </footer>
+
+    <script>
+        // دالة لإغلاق التنبيه
+        function closeAlert() {
+            document.getElementById("newsAlert").style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
