@@ -51,7 +51,7 @@
         .minecraft-theme .btn {
             display: block;
             padding: 15px 40px;
-            margin: 25px auto 0; /* تعديل لتمركز الزر في منتصف الصفحة أسفل النص */
+            margin: 25px auto 0;
             background-color: #ffcc00;
             color: #333;
             text-decoration: none;
@@ -73,6 +73,18 @@
             position: fixed;
             width: 100%;
             bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .close-footer {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2em;
+            margin-left: 10px;
+            cursor: pointer;
         }
 
         @media (max-width: 768px) {
@@ -98,7 +110,14 @@
 
     <footer>
         حقوق الطبع والنشر © 2024 | جميع الحقوق محفوظة
+        <button class="close-footer" onclick="closeFooter()">×</button>
     </footer>
+
+    <script>
+        function closeFooter() {
+            document.querySelector("footer").style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
