@@ -14,32 +14,6 @@
             padding: 0;
         }
 
-        /* تنسيق مربع التنبيه */
-        .news-alert {
-            background-color: #3b5323; /* أخضر داكن */
-            color: #f2f2f2; /* نص فاتح */
-            padding: 15px;
-            text-align: center;
-            font-weight: bold;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 2px solid #2e3d19;
-        }
-
-        /* تنسيق زر الإغلاق في مربع التنبيه */
-        .news-alert .close-btn {
-            background: none;
-            border: none;
-            font-size: 1.5em;
-            color: #f2f2f2;
-            cursor: pointer;
-            position: absolute;
-            top: 5px;
-            right: 10px;
-        }
-
         header {
             background-color: #2e3d19; /* أخضر أغمق */
             padding: 20px;
@@ -71,12 +45,21 @@
             color: #c4c4c4; /* نص رمادي فاتح */
         }
 
-        .underline-center {
-            text-align: center;
-            border-bottom: 2px solid #6aa84f; /* أخضر فاتح */
-            width: 50%;
-            margin: 20px auto;
-            padding-bottom: 10px;
+        .enderman-sticker {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 150px; /* حجم الملصق */
+            animation: floatSticker 3s ease-in-out infinite;
+        }
+
+        @keyframes floatSticker {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         footer {
@@ -87,56 +70,10 @@
             position: fixed;
             width: 100%;
             bottom: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        /* تنسيق زر الإغلاق في الفوتر */
-        .close-btn {
-            background: none;
-            border: none;
-            font-size: 1.5em;
-            color: #d4d4d4;
-            cursor: pointer;
-            position: absolute;
-            top: 5px;
-            right: 10px;
-        }
-
-        /* تنسيق رقاقات الثلج */
-        .snowflake {
-            color: #ffffff; /* أبيض */
-            font-size: 1.5em;
-            font-family: Arial, sans-serif;
-            position: fixed;
-            top: -10px;
-            z-index: 1000;
-            pointer-events: none;
-            animation: fall linear infinite;
-        }
-
-        @keyframes fall {
-            0% { transform: translateY(0); opacity: 1; }
-            100% { transform: translateY(100vh); opacity: 0; }
-        }
-
-        @media (max-width: 768px) {
-            .minecraft-theme {
-                width: 90%;
-                padding: 15px;
-            }
         }
     </style>
 </head>
 <body>
-
-    <!-- مربع التنبيه -->
-    <div id="newsAlert" class="news-alert">
-        <button class="close-btn" onclick="closeAlert()">×</button>
-        خبر مهم: اخبار جديده عن ماين كرافت!!!
-    </div>
 
     <header>
         آخر الأخبار عن ماين كرافت
@@ -145,62 +82,16 @@
     <div class="minecraft-theme">
         <h2>آخر الأخبار في ماين كرافت!</h2>
 
-        <!-- إضافة الصورة هنا بعد العنوان -->
-        <img src="https://github.com/Minecraft-3mk/Minecraft-news/raw/main/di9fms8-0bb977fa-d0ee-4561-804e-5756227f9faa.jpg" alt="Minecraft News Image" style="width: 100%; margin-top: 20px;"/>
-
-        <p>أحدث الأخبار حول "ماين كرافت" تتضمن تحديثات مثيرة قادمة في نهاية 2024. أعلنت "موجانغ" عن إضافة بيئة جديدة تدعى "حديقة بايل" (Pale Garden)، وهي غابة خافتة الإضاءة ستكون مليئة بالأجواء المرعبة. هذه البيئة ستحتوي على مخلوق جديد يُسمى "الصراخ" (The Creaking)، وهو شبح خشبي يظهر ليلاً. المخلوق هذا لا يمكن قتله بشكل تقليدي، بل يتطلب منك تدمير "قلب الصراخ" المختبئ في الغابة لإيقافه. من المتوقع أن يتم إطلاق هذه الإضافة في الأشهر المقبلة.</p>
-
-        <p class="underline-center">في "Minecraft Live 2024"، تم الكشف عن المزيد من التفاصيل حول تحديثات العام القادم وتأكيدات على الفيلم القادم للعبة الذي سيعرض في أبريل 2025.</p>
-
-        <p>يمكنك متابعة آخر الأخبار والتحديثات التي تتعلق بماين كرافت عن طريق موقعنا.</p>
+        <p>أحدث الأخبار حول "ماين كرافت" تتضمن تحديثات مثيرة قادمة في نهاية 2024...</p>
     </div>
 
-    <!-- الفقرة التي تم إضافتها في أسفل الصفحة -->
-    <p style="text-align: center; margin-top: 20px;">لتحميل ماين كرافت إصدار 1.21.41 اضغط <a href="https://mcpedl.org/uploads_files/23-10-2024/minecraft-1-21-41.apk" target="_blank">هنا</a>.</p>
-    
-    <!-- إضافة الكود الجديد في أسفل الصفحة -->
-    <p style="text-align: center; margin-top: 20px;">لتحميل ماين كرافت إصدار 1.21.31 اضغط <a href="https://www.mediafire.com/file/u930u1ub0zyrfcy/" target="_blank">هنا</a>.</p>
+    <!-- إضافة ملصق الأندر مان -->
+    <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/3a/Enderman.png" 
+         alt="Enderman Sticker" class="enderman-sticker">
 
     <footer>
         <span>حقوق الطبع والنشر © 2024 | جميع الحقوق محفوظة</span>
-        <button class="close-btn" onclick="closeFooter()">×</button>
     </footer>
-
-    <script>
-        // دالة لإغلاق التنبيه
-        function closeAlert() {
-            document.getElementById("newsAlert").style.display = "none";
-        }
-
-        // دالة لإغلاق أو إزالة العنصر في الفوتر
-        function closeFooter() {
-            document.querySelector('footer').style.display = "none";
-        }
-
-        // دالة لإنشاء رقاقات الثلج
-        document.addEventListener("DOMContentLoaded", function () {
-            function createSnowflake() {
-                const snowflake = document.createElement("div");
-                snowflake.classList.add("snowflake");
-                snowflake.textContent = "❄";
-
-                // وضع الرقاقة في مكان عشوائي في العرض
-                snowflake.style.left = `${Math.random() * window.innerWidth}px`;
-                snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; // مدة حركة الرقاقة
-                snowflake.style.fontSize = `${Math.random() * 1.5 + 1}em`; // حجم الرقاقة
-
-                document.body.appendChild(snowflake);
-
-                // إزالة الرقاقة بعد انتهاء الحركة
-                snowflake.addEventListener("animationend", () => {
-                    snowflake.remove();
-                });
-            }
-
-            // إنشاء رقاقات جديدة كل 300 مللي ثانية
-            setInterval(createSnowflake, 300);
-        });
-    </script>
 
 </body>
 </html>
